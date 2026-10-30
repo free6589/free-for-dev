@@ -69,3 +69,19 @@ python3 -m http.server 8000
 - 术语统一：free tier→免费额度、free plan→免费套餐、self-hosted→自托管、
   no credit card required→无需信用卡、custom domain→自定义域名。
 - 内容以英文原版为准；中文译文滞后于上游时以原文为准。
+
+## 部署：GitHub Pages
+
+本站是纯静态页面，直接由 GitHub Pages 托管（分支 `master` / 根目录），地址：
+
+**https://free6589.github.io/free-for-dev/**
+
+两个关键点：
+
+1. **`.nojekyll` 必须存在**。GitHub Pages 默认走 Jekyll，会静默丢掉所有以 `_` 开头的文件，
+   左侧目录 `_sidebar.md` 就会 404，侧栏整个消失。
+2. **子路径部署没问题**。站点在 `/free-for-dev/` 下而不是域名根目录，docsify 以
+   `index.html` 所在路径为 base 去取 `README.md`，实测正常；站内所有资源都用相对路径
+   （`vendor/…`、`logo.webp`），不要改成 `/vendor/…` 这种绝对路径，否则子路径下会全挂。
+
+推送后在仓库 Settings → Pages 里确认 Source 是 `Deploy from a branch` → `master` / `/ (root)`。
