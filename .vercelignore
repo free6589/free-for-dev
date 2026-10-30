@@ -1,0 +1,11 @@
+# 不部署到 Vercel 的内容
+work/
+upstream/
+.git/
+.github/
+AGENTS.md
+CLAUDE.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+MAINTAINING.md
+README.en.md

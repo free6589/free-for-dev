@@ -1,0 +1,150 @@
+/* free-for.dev 中文版 · 站点微调样式 */
+:root {
+  --zh-accent: #42b983;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+.sidebar {
+  width: 300px;
+}
+
+.content {
+  left: 300px;
+}
+
+.markdown-section {
+  max-width: 92%;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* 首段引言底色（与原站一致） */
+.markdown-section blockquote:first-of-type {
+  background-color: rgba(235, 248, 242, 0.363);
+}
+
+/* 条目紧凑一些，方便长列表阅读 */
+.markdown-section ul li {
+  margin: 0.35em 0;
+}
+
+.markdown-section h2 {
+  margin-top: 2.4em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-section a {
+  text-decoration: none;
+}
+
+.markdown-section a:hover {
+  text-decoration: underline;
+}
+
+/* 顶部搜索框 */
+.zh-search {
+  position: relative;
+  padding: 8px 0 12px;
+}
+
+.zh-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+}
+
+.zh-search input:focus {
+  border-color: var(--zh-accent);
+  box-shadow: 0 0 0 2px rgba(66, 185, 131, 0.15);
+}
+
+.zh-search-panel {
+  display: none;
+}
+
+.zh-search-panel.active {
+  display: block;
+}
+
+.zh-search-hint {
+  font-size: 12px;
+  color: #909399;
+  margin: 6px 2px;
+}
+
+.zh-search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  border: 1px solid #ebeef5;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.zh-search-list li {
+  margin: 0;
+  border-bottom: 1px solid #f5f7fa;
+}
+
+.zh-search-list li:last-child {
+  border-bottom: none;
+}
+
+.zh-search-list a {
+  display: block;
+  padding: 6px 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #34495e;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.zh-search-list a:hover {
+  background: #f2fbf7;
+}
+
+.zh-search-list .zh-hit {
+  color: #e6a23c;
+  font-weight: 600;
+}
+
+.zh-search-list .zh-tag {
+  display: inline-block;
+  font-size: 11px;
+  color: #909399;
+  margin-right: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+  }
+  .content {
+    left: 0;
+  }
+}
+
+/* 搜索命中后短暂高亮当前条目 */
+.zh-flash {
+  background-color: #fff8e6;
+  box-shadow: 0 0 0 6px #fff8e6;
+  border-radius: 4px;
+  transition: background-color 0.4s ease;
+}
+
+.markdown-section li {
+  scroll-margin-top: 80px;
+}
